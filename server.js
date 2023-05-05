@@ -9,7 +9,7 @@ const app = express();
 app.set('view engine', 'hbs');
 app.set('views', path.join(global.appRoot,'views'));
 
-const PORT = 8383;
+const PORT = process.env.TEXTSHARING_PORT || 8383; // Get port from environment variable or use 8383 as default
 
 // Logging middleware
 app.use((req, res, next) => { 
